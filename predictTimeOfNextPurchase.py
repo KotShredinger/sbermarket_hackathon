@@ -60,7 +60,7 @@ X = X.reshape(X.shape[0],X.shape[1],1)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
 
 model = Sequential()
-model.add(LSTM(50, activation='relu', input_shape=(3, 1)))
+model.add(LSTM(50, activation='relu', input_shape=(N-1, 1)))
 model.add(Dense(1))
 model.compile(optimizer='adam', loss='mse')
 
